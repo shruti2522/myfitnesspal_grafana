@@ -17,7 +17,7 @@ var db *gorm.DB
 
 func init() {
 	var err error
-	db, err = gorm.Open("postgres", "host=localhost user=postgres dbname=myfitnesspal_csv sslmode=disable")
+	db, err = gorm.Open("postgres", "host=localhost user=postgres dbname=myfitnesspal_csv password=admin sslmode=disable")
 	if err != nil {
 		fmt.Println("Error connecting to the database:", err)
 		os.Exit(1)

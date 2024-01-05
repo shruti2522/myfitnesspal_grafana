@@ -1,3 +1,5 @@
+
+
 import React, { useState, ChangeEvent } from 'react';
 import nextConfig from '../next.config';
 import axios from 'axios';
@@ -39,7 +41,8 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
   return (
     <div>
       <input type="file" accept=".csv" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <button onClick={handleUpload} 
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload</button>
     </div>
   );
 };

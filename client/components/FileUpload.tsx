@@ -40,7 +40,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
 
   return (
     <div>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
+      <input type="file" accept=".csv" onChange={handleFileChange} className="mb-4 p-2 border border-gray-300 rounded"/>
       <button onClick={handleUpload} 
       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload</button>
     </div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import FileUpload from '../components/FileUpload';
 
+
 const Home: React.FC = () => {
   const handleUpload = (response: any) => {
     console.log(response);

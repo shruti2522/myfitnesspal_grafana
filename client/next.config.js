@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    NEXT_APP_BACKEND_URL : "http://localhost:8000/"
-}
+    publicRuntimeConfig : {
+        // other public runtime configurations
+        NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_APP_BACKEND_URL,
+      },
+};
 
-module.exports = nextConfig
+
+
+module.exports = nextConfig;

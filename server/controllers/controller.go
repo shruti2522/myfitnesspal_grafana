@@ -5,6 +5,7 @@ import (
 	"myfitnesspal-grafana/utils"
 
 	"github.com/gin-gonic/gin"
+    "net/http"
 )
 
 func UploadCSV(context *gin.Context) {
@@ -28,4 +29,7 @@ func UploadCSV(context *gin.Context) {
     }
 
     context.String(200, "File uploaded successfully")
+
+    grafanaURL := "https://your-grafana-url/dashboard/db/your-dashboard-uid"
+    context.Redirect(http.StatusSeeOther, grafanaURL)
 }

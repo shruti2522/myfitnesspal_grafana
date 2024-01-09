@@ -1,7 +1,6 @@
 
 
 import React, { useState, ChangeEvent } from 'react';
-import nextConfig from '../next.config';
 import axios from 'axios';
 
 interface FileUploadProps {
@@ -18,16 +17,20 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
   };
 
   const handleUpload = async () => {
+    console.log("hello entered handle upload")
     if (!file) {
       console.error('No file selected');
       return;
     }
+    console.log('Uploading file:', file);
+    console.log('Backend URL:', process.env.NEXT_PUBLIC_BACKEND_URL);
+
 
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-      const response = await axios.post(nextConfig.NEXT_APP_BACKEND_URL+'/upload', formData, {
+      const response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+'/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
